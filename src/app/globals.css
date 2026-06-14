@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  /* Cream Light Theme Colors */
+  --background: #fffdfa;
+  --foreground: #1e1b18;
+  --card-bg: #faf6f0;
+  --card-border: #eae3d2;
+  
+  --saffron-50: #fff7ed;
+  --saffron-100: #ffedd5;
+  --saffron-500: #e25822; /* Rich traditional saffron */
+  --saffron-600: #ea580c;
+  --saffron-700: #c2410c;
+  
+  --cream-50: #fffdfa;
+  --cream-100: #faf6f0;
+  --cream-200: #f4eee0;
+  --cream-300: #eae3d2;
+  
+  --gold-300: #fde047;
+  --gold-500: #d4af37; /* Premium Gold */
+  --gold-600: #ca8a04;
+  
+  --charcoal-900: #1e1b18;
+  --charcoal-950: #0e0c0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Premium Charcoal & Gold Dark Theme Colors */
+    --background: #0d0b09;
+    --foreground: #faf6f0;
+    --card-bg: #161310;
+    --card-border: #2c251e;
+  }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  
+  /* Saffron shades */
+  --color-saffron-50: var(--saffron-50);
+  --color-saffron-100: var(--saffron-100);
+  --color-saffron-500: var(--saffron-500);
+  --color-saffron-600: var(--saffron-600);
+  --color-saffron-700: var(--saffron-700);
+
+  /* Cream shades */
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+
+  /* Gold shades */
+  --color-gold-300: var(--gold-300);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+
+  /* Charcoal/Dark shades */
+  --color-charcoal-900: var(--charcoal-900);
+  --color-charcoal-950: var(--charcoal-950);
+  
+  /* Fonts */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", var(--font-sans), sans-serif;
+  
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-pulse-glow: pulse-glow 3s infinite ease-in-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--saffron-500);
+}
+
+/* Custom gradient helpers */
+.text-gradient-gold-saffron {
+  background: linear-gradient(135deg, var(--gold-500) 0%, var(--saffron-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-saffron-gold {
+  background: linear-gradient(135deg, var(--saffron-500) 0%, var(--gold-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-saffron-gold {
+  background: linear-gradient(135deg, var(--saffron-500) 0%, var(--gold-500) 100%);
+}
+
+.bg-gradient-gold-saffron {
+  background: linear-gradient(135deg, var(--gold-500) 0%, var(--saffron-500) 100%);
+}
+
+.border-gradient-saffron {
+  border-image: linear-gradient(to right, var(--saffron-500), var(--gold-500)) 1;
+}
+
+/* Custom glow effects */
+.glow-saffron {
+  box-shadow: 0 0 40px -10px rgba(226, 88, 34, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.3);
+}
+
+.glassmorphism {
+  background: rgba(var(--card-bg), 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
