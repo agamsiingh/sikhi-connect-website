@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Radio, Smartphone } from 'lucide-react';
+import { Menu, X, Radio, Smartphone, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,11 +18,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Live Darbar', href: '#live-darbar' },
-    { name: 'Features', href: '#features' },
-    { name: 'App Preview', href: '#preview' },
-    { name: 'Roadmap', href: '#roadmap' },
-    { name: 'FAQs', href: '#faq' },
+    { name: 'Live Darbar', href: '/#live-darbar' },
+    { name: 'Features', href: '/#features' },
+    { name: 'App Preview', href: '/#preview' },
+    { name: 'Roadmap', href: '/#roadmap' },
+    { name: 'FAQs', href: '/#faq' },
+    { name: 'Privacy Policy', href: '/privacy' },
   ];
 
   return (
@@ -34,7 +36,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/icon.png"
             alt="Sikhi Connect Logo"
@@ -45,30 +47,30 @@ export default function Navbar() {
           <span className="font-serif font-extrabold text-xl tracking-tight text-foreground group-hover:text-saffron-500 transition-colors duration-300">
             Sikhi<span className="text-saffron-500 font-sans font-light">Connect</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-foreground/75 hover:text-saffron-500 transition-colors duration-300"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#waitlist"
+          <Link
+            href="/#waitlist"
             className="inline-flex items-center gap-1.5 bg-gradient-saffron-gold text-white font-semibold text-xs uppercase tracking-widest px-5 py-2.5 rounded-full hover:shadow-[0_4px_15px_-4px_rgba(226,88,34,0.3)] hover:scale-102 transition-all duration-300 cursor-pointer"
           >
             <Smartphone className="w-3.5 h-3.5" />
             Get App Access
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -90,25 +92,25 @@ export default function Navbar() {
       >
         <div className="flex flex-col gap-6 text-center mt-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="font-serif font-bold text-2xl text-foreground/80 hover:text-saffron-500 transition-all duration-300"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="mt-auto flex flex-col gap-4">
-          <a
-            href="#waitlist"
+          <Link
+            href="/#waitlist"
             onClick={() => setIsMobileMenuOpen(false)}
             className="w-full text-center bg-gradient-saffron-gold text-white font-semibold text-sm uppercase tracking-widest py-4 rounded-xl hover:shadow-lg transition-all duration-300"
           >
             Join the Waitlist
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

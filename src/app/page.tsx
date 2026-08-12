@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import LiveDarbarSahib from '@/components/LiveDarbarSahib';
 import AppScreenshots from '@/components/AppScreenshots';
@@ -356,7 +357,12 @@ export default function Home() {
             <div className="text-saffron-500 font-semibold">
               support@sikhiconnect.app
             </div>
-            <div className="text-[10px] text-cream-100/40 pt-4">
+            <div className="pt-2 flex items-center gap-4 text-cream-100/80">
+              <Link href="/privacy" className="hover:text-saffron-500 font-semibold underline transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
+            <div className="text-[10px] text-cream-100/40 pt-2">
               &copy; {new Date().getFullYear()} Sikhi Connect App. Built for the global Sangat with respect.
             </div>
           </div>
