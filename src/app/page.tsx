@@ -361,6 +361,10 @@ export default function Home() {
               <Link href="/privacy" className="hover:text-saffron-500 font-semibold underline transition-colors">
                 Privacy Policy
               </Link>
+              <span className="text-cream-100/30">•</span>
+              <Link href="/delete-account" className="hover:text-saffron-500 font-semibold underline transition-colors">
+                Delete Account
+              </Link>
             </div>
             <div className="text-[10px] text-cream-100/40 pt-2">
               &copy; {new Date().getFullYear()} Sikhi Connect App. Built for the global Sangat with respect.

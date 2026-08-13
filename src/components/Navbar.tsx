@@ -24,6 +24,7 @@ export default function Navbar() {
     { name: 'Roadmap', href: '/#roadmap' },
     { name: 'FAQs', href: '/#faq' },
     { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Delete Account', href: '/delete-account' },
   ];
 
   return (

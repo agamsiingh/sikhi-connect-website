@@ -271,10 +271,19 @@ export default function PrivacyPolicy() {
               <div className="p-5 rounded-2xl bg-saffron-500/5 border border-saffron-500/20 space-y-3">
                 <h3 className="font-bold text-saffron-500 text-base">Request Account or Data Deletion</h3>
                 <p className="text-xs text-foreground/80 leading-relaxed">
-                  In compliance with Google Play Store and iOS developer policies, users have full rights to request complete deletion of their account records, email address, and push notification tokens.
+                  In compliance with Google Play Store and iOS developer policies, users have full rights to request complete deletion of their account records, email address, bookmarks, and push notification tokens.
                 </p>
-                <div className="text-xs font-semibold text-foreground flex items-center gap-2">
-                  <span>To request data deletion, send an email to:</span>
+                <div className="pt-1">
+                  <Link
+                    href="/delete-account"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-saffron-500 text-white font-semibold text-xs hover:bg-saffron-600 transition-colors shadow-sm"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                    <span>Go to Account & Data Deletion Page</span>
+                  </Link>
+                </div>
+                <div className="text-xs font-semibold text-foreground flex items-center gap-2 pt-1">
+                  <span>Or request data deletion via email:</span>
                   <a
                     href="mailto:support@sikhiconnect.app?subject=Data%20Deletion%20Request"
                     className="text-saffron-500 underline font-bold"
